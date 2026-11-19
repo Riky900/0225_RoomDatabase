@@ -1,4 +1,4 @@
-package com.example.meet9.uicontroller
+package com.example.meet9.view.route
 
 interface DestinasiNavigasi {
     /**
