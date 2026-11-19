@@ -24,7 +24,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.meet9.R
-import com.example.meet9.uicontroller.DestinasiNavigasi
+import com.example.meet9.view.route.DestinasiNavigasi
 import com.example.meet9.uicontroller.SiswaTopAppBar
 import com.example.meet9.viewmodel.DetailSiswa
 import com.example.meet9.viewmodel.EntryViewModel
