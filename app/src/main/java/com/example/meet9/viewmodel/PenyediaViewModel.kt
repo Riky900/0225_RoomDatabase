@@ -1,7 +1,7 @@
 package com.example.meet9.viewmodel
 
-import android.app.Application
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
@@ -9,11 +9,24 @@ import com.example.meet9.AplikasiSiswa
 
 object PenyediaViewModel {
     val Factory = viewModelFactory {
-        initializer<HomeViewModel> {
+        initializer {
             HomeViewModel(aplikasiSiswa().container.repositoriSiswa)
         }
-        initializer<EntryViewModel> {
+        initializer {
             EntryViewModel(aplikasiSiswa().container.repositoriSiswa)
+        }
+        //edit : tambah initializer untuk DetailViewModel dan EditViewModel
+        initializer {
+            DetailViewModel(
+                savedStateHandle = this.createSavedStateHandle(),
+                aplikasiSiswa().container.repositoriSiswa
+            )
+        }
+        initializer {
+            EditViewModel(
+                savedStateHandle = this.createSavedStateHandle(),
+                aplikasiSiswa().container.repositoriSiswa
+            )
         }
     }
 }
